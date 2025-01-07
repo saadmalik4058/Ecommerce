@@ -9,6 +9,7 @@ const ProductsStore = () => {
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
     const storedProductsInCart = JSON.parse(localStorage.getItem("cart")) || [];
+
     setCart(storedProductsInCart);
     setProducts(storedProducts);
   }, []);
@@ -62,7 +63,6 @@ const ProductsStore = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg">
-     
       <Addproducts onAdd={handleAddProduct} editProduct={editProduct} />
 
       {products.length > 0 && (

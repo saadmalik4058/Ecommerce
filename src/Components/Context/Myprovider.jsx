@@ -81,6 +81,7 @@ function MyProvider({ children }) {
       );
       setCart(storedProducts);
 
+      localStorage.setItem("cart", JSON.stringify(storedProducts));
       return;
     }
     setCart(storedProducts);

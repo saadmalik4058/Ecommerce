@@ -1,5 +1,5 @@
-export const UniqueCategory = (productsCategory) => {
-  return Array.isArray(productsCategory)
-    ? Array.from(new Set(productsCategory.map((item) => item?.Category)))
+export const UniqueCategory = (products) => {
+  return Array.isArray(products)
+    ? Array.from(new Set(products.map((item) => item?.Category)))
     : [];
 };

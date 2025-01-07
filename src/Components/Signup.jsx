@@ -34,6 +34,7 @@ function Signup() {
   function onSubmit(data) {
     ctx.setItem(data);
     localStorage.setItem("userEmail", data.email);
+    alert("signup successfully");
     navigate("/Dashboard");
 
     reset({

@@ -7,8 +7,8 @@ import { UniqueCategory } from "./getUniqueCategory";
 const CategorySlider = () => {
   const [show, setShow] = useState(false);
   const { getProducts } = useContext(Context);
-  const productsCategory = getProducts() || [];
-  const Category = UniqueCategory(productsCategory);
+  const products = getProducts() || [];
+  const Category = UniqueCategory(products);
   function showSlider() {
     setShow((prev) => !prev);
   }

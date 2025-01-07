@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CategorySlider from "./Pages/Category/CategorySlider";
 import CategoryHeader from "./Pages/Category/CategoryHeader";
+import { Button } from "@mui/material";
 
 function Header() {
   const navigate = useNavigate();
@@ -105,9 +106,9 @@ function Header() {
           </button>
 
           <Link to={"/Dashboard/admin"} className="hidden sm:block">
-            <button className="bg-white text-black whitespace-nowrap hover:bg-gray-600 hover:text-white rounded-md px-4 py-1 transition duration-300">
+            <Button className="!bg-white !text-black !whitespace-nowrap !hover:bg-gray-600 !hover:text-white !rounded-md !px-4 !py-1 !transition !duration-300">
               Admin Page
-            </button>
+            </Button>
           </Link>
         </div>
 
@@ -124,11 +125,8 @@ function Header() {
             {cartItems.length > 0 ? (
               <div className="w-full overflow-y-auto">
                 {cartItems.map((item) => (
-                  <div>
-                    <div
-                      className="flex justify-between items-center w-full mb-3 border-b pb-2"
-                      key={item.id}
-                    >
+                  <div key={item?.id}>
+                    <div className="flex justify-between items-center w-full mb-3 border-b pb-2">
                       <div className="flex items-center">
                         <img
                           className="w-12 h-12 rounded-md"

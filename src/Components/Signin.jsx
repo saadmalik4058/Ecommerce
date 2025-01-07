@@ -26,10 +26,15 @@ const Signin = () => {
   const ctx = useContext(Context);
   const emailValue = watch("email");
   const passwordValue = watch("password");
+  const watchFields = watch(["email", "password"]);
+  const isCompleted = watchFields.every(
+    (value) => value && value.trim() !== ""
+  );
   const onSubmit = (data) => {
     let findeduser = ctx.getItem(data, token);
     if (findeduser) {
       localStorage.setItem("userEmail", data.email);
+
       navigate("/Dashboard");
     } else {
       alert("Invalid Credentials");
@@ -88,7 +93,14 @@ const Signin = () => {
             </div>
           </div>
 
-          <button type="submit" className="bg-green-300 rounded-md p-2 ">
+          <button
+            type="submit"
+            className={
+              isCompleted
+                ? "bg-green-400 rounded-md p-2"
+                : " bg-slate-200 rounded-md p-2"
+            }
+          >
             {" "}
             Signin
           </button>
@@ -96,7 +108,7 @@ const Signin = () => {
             Did'nt have an account ?
             <Link to={"/signup"}>
               {" "}
-              <button className="bg-green-300 rounded-md p-2 ">
+              <button className="bg-green-400 rounded-md p-2 ">
                 Signup
               </button>{" "}
             </Link>

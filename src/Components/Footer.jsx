@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const { getProducts } = useContext(Context);
   const productsCategory = getProducts() || [];
-  console.log(productsCategory, "papa");
+  // console.log(productsCategory, "papa");
 
   const Category = UniqueCategory(productsCategory);
-  console.log(Category, "pop");
+  // console.log(Category, "pop");
 
   return (
     <footer className="bg-black text-white py-12 px-6  ">

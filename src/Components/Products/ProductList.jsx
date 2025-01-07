@@ -16,7 +16,10 @@ const ProductList = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8">Product List</h2>
+      <marquee className="text-3xl font-bold text-gray-800 mb-8">
+        Product List
+      </marquee>
+
       {products.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-4">
           {products.map((product, index) => (
@@ -43,7 +46,6 @@ const ProductList = () => {
               </div>
             </Link>
           ))}
-          {/* <Pdetail /> */}
         </div>
       ) : (
         <p className="text-gray-500 text-lg">No products added yet</p>
